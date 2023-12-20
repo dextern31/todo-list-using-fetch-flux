@@ -21,6 +21,16 @@ const injectContext = PassedComponent => {
 			})
 		);
 
+
+		/*useEffect(() => {
+
+			//const store = getStore();
+			if(state.store.toDos.length) {
+				state.actions.updateTodosAPI();
+				console.log("todos array");
+			}
+		}, [state.store.toDos]);*/
+
 		useEffect(() => {
 			/**
 			 * EDIT THIS!
@@ -31,7 +41,11 @@ const injectContext = PassedComponent => {
 			 * state.actions.loadSomeData(); <---- calling this function from the flux.js actions
 			 *
 			 **/
+			state.actions.getTodosAPI("Get");
+			//console.log("empty array");
 		}, []);
+
+		
 
 		// The initial value for the context is not null anymore, but the current state of this component,
 		// the context will now have a getStore, getActions and setStore functions available, because they were declared
